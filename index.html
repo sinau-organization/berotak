@@ -237,51 +237,14 @@
           <!-- Carousel End-->
         </div>
       </section>
-      <section class="bar background-white">
+      <section id="features" class="bar background-white">
         <div class="container text-center">
           <div class="row">
-            <div class="col-lg-4 col-md-6">
+            <div class="col-lg-4 col-md-6" v-for="feature in features">
               <div class="box-simple">
-                <div class="icon-outlined"><i class="fa fa-desktop"></i></div>
-                <h3 class="h4">CMS</h3>
-                <p>Menyediakan berbagai sistem manajemen konten dari sabang sampai merauke yang mudah diimplentasi.</p>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-              <div class="box-simple">
-                <div class="icon-outlined"><i class="fa fa-print"></i></div>
-                <h3 class="h4">Karya Tulis</h3>
-                <p>Karya sastra ditulis oleh pengarang profesional yang setiap hari meluangkan waktunya untuk belajar sastra dari game Doki Doki Literature Club</p>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-              <div class="box-simple">
-                <div class="icon-outlined"><i class="fa fa-globe"></i></div>
-                <h3 class="h4">Universal</h3>
-                <p>Project yang disediakan bersifat universal dan dapat digunakan dalam masalah apa saja. Kreatifitas adalah batasannya.</p>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-lg-4 col-md-6">
-              <div class="box-simple">
-                <div class="icon-outlined"><i class="fa fa-lightbulb-o"></i></div>
-                <h3 class="h4">Brilian</h3>
-                <p>Menjadi seorang 200IQ hanya dengan membeli projek yang kami sediakan yang dapat membuka mata hati dan mata kaki anda.</p>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-              <div class="box-simple">
-                <div class="icon-outlined"><i class="fa fa-envelope-o"></i></div>
-                <h3 class="h4">Tanpa Pajak</h3>
-                <p>Aplikasi, website dan karya tulis yang kami sediakan bersih dari pajak yang berbobot dan tidak bersifat menguras dompet.</p>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-              <div class="box-simple">
-                <div class="icon-outlined"><i class="fa fa-user"></i></div>
-                <h3 class="h4">Sosial</h3>
-                <p>Membantu mahasiswa yang malu dalam meminta contoh temannya dan tidak ingin terlihat buruk didepan guru. Disini semua pembelian disimpan dengan aman yang akan ditukarkan dengan indomie.</p>
+                <div class="icon-outlined"><i class="fa" :class="feature.iconClass"></i></div>
+                <h3 class="h4">{{feature.title}}</h3>
+                <p>{{feature.excerpt}}</p>
               </div>
             </div>
           </div>
@@ -324,53 +287,19 @@
               <div class="heading text-center">
                 <h2>Project ternama</h2>
               </div>
-              <p class="lead">Project yang kami sediakan sudah lulus revisi dosen dan sudah melewati uji keluh kesah hasrat basah keringat pantat seorang pengembang.</p>
+              <p class="lead">Project yang kami sediakan sudah lulus revisi dosen dan sudah melewati uji keluh kesah hasrat pasrah keringat hangat seorang pengembang.</p>
               <div class="row portfolio text-center color-white">
-                <div class="col-md-4">
+                <div v-for="portfolio in portfolios" class="col-md-4">
                   <div class="box-image">
-                    <div class="image"><img src="img/portfolio-1.jpg" alt="" class="img-fluid">
+                    <div class="image"><img :src="portfolio.thumbnail.src" :alt="portfolio.thumbnail.alt" class="img-fluid">
                       <div class="overlay d-flex align-items-center justify-content-center">
                         <div class="content">
                           <div class="name">
-                            <h3><a href="portfolio-detail.html" class="color-white">Ontel Tracker</a></h3>
+                            <h3><a href="portfolio-detail.html" class="color-white">{{portfolio.title}}</a></h3>
                           </div>
                           <div class="text">
-                            <p class="d-sm-none">Jangan lagi mau kehilangan sepeda ontel bernilau kamu</p>
+                            <p class="d-sm-none">{{portfolio.excerpt}}</p>
                             <p class="buttons"><a href="#" class="btn btn-template-outlined-white">Demo</a><a href="#" class="btn btn-template-outlined-white">Beli</a></p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="box-image">
-                    <div class="image"><img src="img/portfolio-2.jpg" alt="" class="img-fluid">
-                      <div class="overlay d-flex align-items-center justify-content-center">
-                        <div class="content">
-                          <div class="name">
-                            <h3><a href="portfolio-detail.html" class="color-white">Mendeteksi Mekanisme Wanita</a></h3>
-                          </div>
-                          <div class="text">
-                            <p class="d-sm-none">Bingung kode kode dari cewe? Cukup masukan nama nya dan baca mekanisme doi gimana</p>
-                            <p class="buttons"><a href="#" class="btn btn-template-outlined-white">Demo</a><a href="#" class="btn btn-template-outlined-white">Beli</a></p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="box-image">
-                    <div class="image"><img src="img/portfolio-3.jpg" alt="" class="img-fluid">
-                      <div class="overlay d-flex align-items-center justify-content-center">
-                        <div class="content">
-                          <div class="name">
-                            <h3><a href="#" class="color-white">Penilaian Jutawan</a></h3>
-                          </div>
-                          <div class="text">
-                            <p class="d-sm-none">Upload foto, ketahui berapa nilaimu sebagai manusia jutawan</p>
-                            <p class="buttons"><a href="portfolio-detail.html" class="btn btn-template-outlined-white">Demo</a><a href="#" class="btn btn-template-outlined-white">Website</a></p>
                           </div>
                         </div>
                       </div>
@@ -415,7 +344,7 @@
       <footer class="main-footer">
         <div class="container">
           <div class="row">
-            <div class="col-lg-3">
+            <div class="col-lg-4">
               <h4 class="h6">Tentang Berotak</h4>
               <p>Berotak adalah salah satu projek ambisius oleh 3 buah lampu taman demi membantu mahasiswa dan kalangan lainnya dalam menyelesaikan tugas akhir.</p>
               <hr>
@@ -430,7 +359,7 @@
               </form>
               <hr class="d-block d-lg-none">
             </div>
-            <div class="col-lg-3">
+            <div class="col-lg-4">
               <h4 class="h6">Blog</h4>
               <ul class="list-unstyled footer-blog-list">
                 <li class="d-flex align-items-center">
@@ -454,20 +383,10 @@
               </ul>
               <hr class="d-block d-lg-none">
             </div>
-            <div class="col-lg-3">
+            <div class="col-lg-4">
               <h4 class="h6">Contact</h4>
               <p class="text-uppercase">Kunjungi taman terdekat anda<br><strong>Indonesia</strong></p><a href="contact.html" class="btn btn-template-main">Cari taman terdekat</a>
               <hr class="d-block d-lg-none">
-            </div>
-            <div class="col-lg-3">
-              <ul class="list-inline photo-stream">
-                <li class="list-inline-item"><a href="#"><img src="img/detailsquare.jpg" alt="..." class="img-fluid"></a></li>
-                <li class="list-inline-item"><a href="#"><img src="img/detailsquare2.jpg" alt="..." class="img-fluid"></a></li>
-                <li class="list-inline-item"><a href="#"><img src="img/detailsquare3.jpg" alt="..." class="img-fluid"></a></li>
-                <li class="list-inline-item"><a href="#"><img src="img/detailsquare3.jpg" alt="..." class="img-fluid"></a></li>
-                <li class="list-inline-item"><a href="#"><img src="img/detailsquare2.jpg" alt="..." class="img-fluid"></a></li>
-                <li class="list-inline-item"><a href="#"><img src="img/detailsquare.jpg" alt="..." class="img-fluid"></a></li>
-              </ul>
             </div>
           </div>
         </div>
@@ -490,6 +409,7 @@
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/popper.js/umd/popper.min.js"> </script>
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="vendor/jquery.cookie/jquery.cookie.js"> </script>
     <script src="vendor/waypoints/lib/jquery.waypoints.min.js"> </script>
     <script src="vendor/jquery.counterup/jquery.counterup.min.js"> </script>
@@ -499,5 +419,77 @@
     <script src="vendor/bootstrap-select/js/bootstrap-select.min.js"></script>
     <script src="vendor/jquery.scrollto/jquery.scrollTo.min.js"></script>
     <script src="js/front.js"></script>
+
+    <script>
+      var app = new Vue({
+        el: '#all',
+        data: {
+          features: [
+            {
+              iconClass: 'fa-desktop',
+              title: 'CMS',
+              excerpt: 'Menyediakan berbagai sistem manajemen konten dari sabang sampai merauke yang mudah diimplentasi.'
+            },
+            {
+              iconClass: 'fa-print',
+              title: 'KARYA TULIS',
+              excerpt: 'Karya sastra ditulis oleh pengarang profesional yang setiap hari meluangkan waktunya untuk belajar sastra dari game Doki Doki Literature Club'
+            },
+            {
+              iconClass: 'fa-globe',
+              title: 'UNIVERSAL',
+              excerpt: 'Project yang disediakan bersifat universal dan dapat digunakan dalam masalah apa saja. Kreatifitas adalah batasannya.'
+            },
+            {
+              iconClass: 'fa-lightbulb-o',
+              title: 'BRILIAN',
+              excerpt: 'Menjadi seorang 200IQ hanya dengan membeli projek yang kami sediakan yang dapat membuka mata hati dan mata kaki anda.'
+            },
+            {
+              iconClass: 'fa-envelope-o',
+              title: 'TANPA PAJAK',
+              excerpt: 'Aplikasi, website dan karya tulis yang kami sediakan bersih dari pajak yang berbobot dan tidak bersifat menguras dompet.'
+            },
+            {
+              iconClass: 'fa-user',
+              title: 'SOSIAL',
+              excerpt: 'Membantu mahasiswa yang malu dalam meminta contoh temannya dan tidak ingin terlihat buruk didepan guru. Disini semua pembelian disimpan dengan aman yang akan ditukarkan dengan indomie.'
+            },
+          ],
+    portfolios: [
+      {
+        thumbnail: 
+          {
+            alt: 'Portfolio 1',
+            src: 'img/product-android-1.png'
+          }
+        ,
+        title: 'Sehari',
+        excerpt: 'Jangan lagi mau melewatkan sesuatu yang kamu rencanakan'
+      },
+      {
+        thumbnail: 
+          {
+            alt: 'Portfolio 2',
+            src: 'img/product-website-1.jpg'
+          }
+        ,
+        title: 'Simple Dashboard',
+        excerpt: 'CMS Rapi dan Minimalis multi-fungsi'
+      },
+      {
+        thumbnail: 
+          {
+            alt: 'Portfolio 3',
+            src: 'img/product-website-2.jpeg'
+          }
+        ,
+        title: 'Web Editor',
+        excerpt: 'Tidak perlu belajar program untuk mendesain situs'
+      }
+    ]
+  } 
+})
+    </script>
   </body>
 </html>
